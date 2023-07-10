@@ -9,7 +9,7 @@ type CarFilter = {
 export async function fetchCars(filters: CarFilter) {
   const { fuel, limit, manufacturer, model, year } = filters;
 
-  const url = new URL("https://cars-by-api-ninjas.p.rapidapi.com/v1/cars");
+  const url = new URL(process.env.RAPID_BASEURL || "");
 
   url.searchParams.append("fuel", fuel || "");
   url.searchParams.append("limit", limit.toString());
@@ -18,8 +18,8 @@ export async function fetchCars(filters: CarFilter) {
   url.searchParams.append("year", year.toString());
 
   const headers = {
-    "X-RapidAPI-Key": "0491963015mshba2f5e0661ebf4ap175eddjsn1f27dcff6301",
-    "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
+    "X-RapidAPI-Key": process.env.RAPID_KEY || "",
+    "X-RapidAPI-Host": process.env.RAPID_HOST || "",
   };
 
   const response = await fetch(url.toString(), {

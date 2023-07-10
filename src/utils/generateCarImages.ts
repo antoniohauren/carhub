@@ -5,7 +5,7 @@ export function generateCarImages(car: CarCardProps["car"], angle?: string) {
 
   const { make, year, model } = car;
 
-  url.searchParams.append("customer", "hrjavascript-mastery");
+  url.searchParams.append("customer", process.env.IMAGIN_KEY || "");
   url.searchParams.append("make", make);
   url.searchParams.append("modelFamily", model.split(" ")[0]);
   url.searchParams.append("zoomType", "fullscreen");

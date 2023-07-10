@@ -11,7 +11,7 @@ export default async function Home({ searchParams }: any) {
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
+    limit: searchParams.limit || 8,
     model: searchParams.model || "",
   });
 
