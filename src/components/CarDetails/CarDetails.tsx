@@ -1,5 +1,6 @@
 "use client";
 
+import { generateCarImages } from "@/utils/generateCarImages";
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { Fragment } from "react";
@@ -51,7 +52,7 @@ export function CarDetails({ isOpen, closeModal, car }: CarDetailsProps) {
                   <div className="flex-1 flex flex-col gap-3">
                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                       <Image
-                        src="/hero.png"
+                        src={generateCarImages(car)}
                         fill
                         priority
                         className="object-contain"
@@ -62,7 +63,7 @@ export function CarDetails({ isOpen, closeModal, car }: CarDetailsProps) {
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImages(car, "29")}
                           fill
                           priority
                           className="object-contain"
@@ -72,7 +73,7 @@ export function CarDetails({ isOpen, closeModal, car }: CarDetailsProps) {
 
                       <div className="flex-1 relative w-full h-24 bg-primary-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImages(car, "33")}
                           fill
                           priority
                           className="object-contain"
@@ -82,7 +83,7 @@ export function CarDetails({ isOpen, closeModal, car }: CarDetailsProps) {
 
                       <div className="flex-1 relative w-full h-24 bg-primary-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImages(car, "13")}
                           fill
                           priority
                           className="object-contain"

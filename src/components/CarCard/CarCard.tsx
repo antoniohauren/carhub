@@ -1,6 +1,7 @@
 "use client";
 
 import { calculateCarRent } from "@/utils/calculateCarRent";
+import { generateCarImages } from "@/utils/generateCarImages";
 import Image from "next/image";
 import { useState } from "react";
 import { CarCardProps } from ".";
@@ -30,7 +31,7 @@ export function CarCard({ car }: CarCardProps) {
 
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src={generateCarImages(car)}
           fill
           priority
           className="object-contain"
