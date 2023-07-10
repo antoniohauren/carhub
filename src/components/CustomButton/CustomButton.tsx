@@ -1,17 +1,17 @@
 "use client";
 
-// import Image from 'next/image';
 import { CustomButtonProps } from ".";
 
 export function CustomButton({
   title,
   containerStyles,
   handleClick,
+  btnType = "button",
 }: CustomButtonProps) {
   return (
     <button
       disabled={false}
-      type={"button"}
+      type={btnType}
       className={`custom-btn ${containerStyles}`}
       onClick={handleClick}
     >
